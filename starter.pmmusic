@@ -1,0 +1,16 @@
+TITLE Starter Tune
+COMPOSER CS135
+MASTERBPM 120
+VOLLEVEL mml
+
+PATTERN intro {
+o4 l8 c d e f g a b > c
+}
+
+SFX beep {
+o6 l16 c
+}
+
+BGM song {
+intro
+}
