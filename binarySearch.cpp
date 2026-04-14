@@ -87,6 +87,24 @@ for (int i = 0; i < size - 1; i++) {
 
 }
 
+void search(int arr[],int size, int target) { 
+    
+    int low = 0;
+    int high = size - 1;
+    while (low <= high) { 
+        int middle = (low + high) / 2; 
+        if (arr[middle] == target) { 
+            cout << "The number " << target << " is found at index " << middle << endl; 
+            return;
+        } else if (arr[middle] < target) { 
+            low = middle + 1; 
+        } else { 
+            high = middle - 1; 
+        }
+    }
+    cout << "The number " << target << " is not found in the array" << endl; 
+}
+
 /*
 void bubbleSort(int arr[], int size) {
     for (int i = 0; i < size - 1; i++) {
@@ -147,4 +165,14 @@ cout << "the highest number in the array is : " << highNumber(arr, 5) << endl;
 cout << "The lowest number in the array is : " << lowNumber(arr, 5) << endl; 
 cout << "the middle nu,mmber in the array is : " << middleElement(arr,5) << endl; 
 cout << "the array sorted in increasing order is : " << sorrtedAarray(arr, 5) << endl; 
+cout << "Sorted array: ";
+for (int i = 0; i < 5; i++) {
+    cout << arr[i] << " ";
+}
+
+cout <<"\nNow we can search for a number in the array using binary search : " << endl;
+int target; 
+    cout << "Enter the number you want to search for : " << endl;
+    cin >> target;
+search(arr, 5, target);
 }
